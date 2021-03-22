@@ -15,9 +15,9 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
-  - docker tag simple-node turbosaurio/simple-node:latest
+  - docker build -t  ravis_env_var_exercise  .
+  - docker tag  ravis_env_var_exercise  turbosaurio/ ravis_env_var_exercise :latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push turbosaurio/simple-node
+  - docker push turbosaurio/ ravis_env_var_exercise 
